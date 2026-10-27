@@ -15,28 +15,7 @@ Route::get('/', function () {
         return redirect()->route('pos.index');
     }
     return redirect()->route('login');
-});
-
-Route::middleware('guest')->group(function () {
-    Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
-    Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
-    Route::get('/quick-login/{role}', [AuthController::class, 'quickLogin'])->name('quick-login');
-});
-
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
-
-// Kasir (POS) Routes
-Route::middleware(['auth', 'role:cashier,admin'])->group(function () {
-    Route::get('/pos', function () {
-        return view('pos.index');
-    })->name('pos.index');
-});
-
-// Gudang (Warehouse) Routes
-Route::middleware(['auth', 'role:warehouse,admin'])->prefix('warehouse')->name('warehouse.')->group(function () {
-    Route::get('/', [WarehouseController::class, 'index'])->name('index');
-    Route::post('/purchase-orders', [WarehouseController::class, 'storePurchaseOrder'])->name('po.store');
-    Route::post('/stock-adjustments', [WarehouseController::class, 'storeStockAdjustment'])->name('adjustment.store');
+}kAdjustment'])->name('adjustment.store');
 });
 
 // Admin / Manager Routes
