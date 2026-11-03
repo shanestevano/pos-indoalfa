@@ -1,0 +1,13 @@
+/node_modules
+/vendor
+/storage/*.key
+.git
+.gitignore
+.env
+.env.*
+.phpunit.result.cache
+tests/
+README.md
+CLAUDE.md
+AGENTS.md
+
