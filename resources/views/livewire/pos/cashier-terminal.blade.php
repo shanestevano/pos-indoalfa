@@ -337,11 +337,27 @@
 
                 <div class="pt-2">
                     <button type="submit" 
-                            class="w-full py-2.5 px-4 bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm rounded-xl transition-all shadow-md">
-                        Konfirmasi & Buka Kasir
+                            class="w-full py-2.5 px-4 bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm rounded-xl transition-all shadow-md flex items-center justify-center space-x-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Konfirmasi & Buka Kasir</span>
                     </button>
                 </div>
             </form>
+
+            <div class="mt-3 pt-3 border-t border-slate-100">
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" 
+                            class="w-full py-2.5 px-4 bg-slate-50 hover:bg-red-50 hover:text-red-600 hover:border-red-200 text-slate-500 font-bold text-xs rounded-xl border border-slate-200 transition-all flex items-center justify-center space-x-2 cursor-pointer">
+                        <svg class="w-4 h-4 text-slate-400 group-hover:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                        </svg>
+                        <span>Selesai Shift & Kembali ke Login</span>
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
     @endif
